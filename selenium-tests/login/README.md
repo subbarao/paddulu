@@ -1,0 +1,3 @@
+- [x] signin and signout 
+- [x] wrong email 
+- [x] wrong password
