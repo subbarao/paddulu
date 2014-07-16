@@ -1,0 +1,29 @@
+<h1>Listing bills</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Bought on</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bills.each do |bill| %>
+      <tr>
+        <td><%= bill.store %></td>
+        <td><%= bill.bought_on %></td>
+        <td><%= bill.total %></td>
+        <td><%= link_to 'Show', bill %></td>
+        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
+        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bill', new_bill_path, class: "btn btn-primary" %>
