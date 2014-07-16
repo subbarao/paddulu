@@ -1,3 +1,5 @@
 - [x] signin and signout 
 - [x] wrong email 
 - [x] wrong password
+- [x] signin and signout successfull
+- [x] wrong email and password successfull
