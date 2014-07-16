@@ -1,5 +1,8 @@
 <%# add navigation links to this file %>
 <li><%= link_to 'About', page_path('about') %></li>
+<li><%= link_to 'Sign up', new_user_registration_path %> </li>
+<li> <%= link_to 'Log in', new_user_session_path %> </li>
+
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   <%= link_to 'bills', bills_path, :class => 'navbar-link' %> |
