@@ -1,5 +1,6 @@
 class BillsController < ApplicationController
   before_action :set_bill, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /bills
   # GET /bills.json
@@ -10,6 +11,7 @@ class BillsController < ApplicationController
   # GET /bills/1
   # GET /bills/1.json
   def show
+
   end
 
   # GET /bills/new
