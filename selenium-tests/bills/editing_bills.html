@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://qapaddulu.herokuapp.com/" />
+<title>editing_bills</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">editing_bills</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=bills</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=New Bill</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bill_store</td>
+	<td>Grocery List</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bill_bought_on_1i</td>
+	<td>label=2013</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bill_bought_on_2i</td>
+	<td>label=June</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bill_bought_on_3i</td>
+	<td>label=2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bill_total</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=flash_notice</td>
+	<td>Bill was successfully created.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bill_store</td>
+	<td>Grocery List 1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bill_bought_on_1i</td>
+	<td>label=2014</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bill_bought_on_2i</td>
+	<td>label=July</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bill_bought_on_3i</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bill_total</td>
+	<td>150</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=flash_notice</td>
+	<td>Bill was successfully updated.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Back</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Destroy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=flash_notice</td>
+	<td>Bill was successfully destroyed.</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
