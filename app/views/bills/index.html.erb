@@ -1,12 +1,12 @@
 <h1>Listing bills</h1>
 
-<table class="table">
+<table class="table table-bordered table-striped" >
   <thead>
-    <tr>
-      <th>Store</th>
+    <tr class="table info">
+      <th align="centre">Store</th>
       <th>Bought on</th>
       <th>Total</th>
-      <th colspan="3"></th>
+      <th colspan="3" align="" >Action</th>
     </tr>
   </thead>
 
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Bill', new_bill_path, class: "btn btn-primary" %>
+<%= link_to 'New Bill', new_bill_path, class: "btn btn-success active btn-xs" %>
