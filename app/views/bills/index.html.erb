@@ -1,8 +1,10 @@
 <h1>Listing bills</h1>
+<% a = current_user.bills.count + 1 %>
 
-<table class="table table-bordered table-striped table-condensed" >
+<table class="table table-bordered table-striped table-condensed " >
   <thead>
     <tr class="table info">
+      <th> <div align="center"> Sl. </th>
       <th> <div align="center"> Store </th>
       <th> <div align="center"> Bought on </th>
       <th> <div align="center"> Amount </th>
@@ -13,18 +15,18 @@
   <tbody>
     <% @bills.each do |bill| %>
       <tr>
-        <td><%= bill.store.upcase %></td>
+        <td> <div align="right"> <%= a -= 1   %> </td>
+        <td> <%= bill.store.upcase %></td>
         <td> <div align="center"> <%= bill.bought_on.strftime("%d-%b-%Y") %></td>
         <td> <div align="right"> <%= number_to_currency(bill.total) %></td>
-
-
         <td> <div align="center"> <%= link_to 'Show', bill, class: "btn btn-info active btn-xs" %></td>
         <td> <div align="center"> <%= link_to 'Edit', edit_bill_path(bill), class: "btn btn-warning active btn-xs" %></td>
         <td> <div align="center"> <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure you want to destroy the Bill?' }, class: "btn btn-danger active btn-xs" %></td>
       </tr>
     <% end %>
+    <td class="table info" colspan="4"> <div align="right"> Total is <strong> <%= number_to_currency(@amount) %>   </td>
   </tbody>
-  <td colspan="3"> <div align="right"> Total is <strong> <%= "$#{@amount}" %> </td>
+
 </table>
 
 <br>
