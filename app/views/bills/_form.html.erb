@@ -17,7 +17,7 @@
   </div>
   <div class="form-group">
     <%= f.label :bought_on %><br>
-    <%= f.date_select :bought_on %>
+    <%= f.date_select :bought_on, order: [:day, :month, :year] %>
   </div>
   <div class="form-group">
     <%= f.label :total %><br>

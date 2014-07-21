@@ -14,7 +14,7 @@
     <% @bills.each do |bill| %>
       <tr>
         <td><%= bill.store.upcase %></td>
-        <td> <div align="center"> <%= bill.bought_on.strftime("%b-%d-%Y") %></td>
+        <td> <div align="center"> <%= bill.bought_on.strftime("%d-%b-%Y") %></td>
         <td> <div align="right"> <%= number_to_currency(bill.total) %></td>
         <td> <div align="center"> <%= link_to 'Show', bill, class: "btn btn-info active btn-xs" %></td>
         <td> <div align="center"> <%= link_to 'Edit', edit_bill_path(bill), class: "btn btn-warning active btn-xs" %></td>
