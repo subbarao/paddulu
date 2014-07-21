@@ -5,7 +5,7 @@ class BillsController < ApplicationController
   # GET /bills
   # GET /bills.json
   def index
-    @bills = current_user.bills
+    @bills = current_user.bills.order(created_at: :desc)
 	  @amount = 0
     @bills.each do |amount|
 	     @amount += amount.total
