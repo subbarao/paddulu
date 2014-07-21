@@ -6,6 +6,11 @@ class BillsController < ApplicationController
   # GET /bills.json
   def index
     @bills = current_user.bills
+	  @amount = 0
+    @bills.each do |amount|
+	     @amount += amount.total
+	  end
+
   end
 
   # GET /bills/1

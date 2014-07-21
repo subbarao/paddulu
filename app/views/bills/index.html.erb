@@ -5,7 +5,7 @@
     <tr class="table info">
       <th> <div align="center"> Store </th>
       <th> <div align="center"> Bought on </th>
-      <th> <div align="center"> Total </th>
+      <th> <div align="center"> Amount </th>
       <th colspan="3"> <div align="center"> Action </th>
     </tr>
   </thead>
@@ -16,12 +16,15 @@
         <td><%= bill.store.upcase %></td>
         <td> <div align="center"> <%= bill.bought_on.strftime("%d-%b-%Y") %></td>
         <td> <div align="right"> <%= number_to_currency(bill.total) %></td>
+
+
         <td> <div align="center"> <%= link_to 'Show', bill, class: "btn btn-info active btn-xs" %></td>
         <td> <div align="center"> <%= link_to 'Edit', edit_bill_path(bill), class: "btn btn-warning active btn-xs" %></td>
         <td> <div align="center"> <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure you want to destroy the Bill?' }, class: "btn btn-danger active btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
+  <td colspan="3"> <div align="right"> Total is <strong> <%= "$#{@amount}" %> </td>
 </table>
 
 <br>
