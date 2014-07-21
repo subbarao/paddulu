@@ -12,7 +12,7 @@
 
 <p>
   <strong>Total:</strong>
-  <%= @bill.total %>
+  <%= number_to_currency(@bill.total) %>
 </p>
 
 <%= link_to 'Edit', edit_bill_path(@bill),  class: "btn btn-warning btn-xs active" %> |
