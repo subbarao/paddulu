@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @bills.each_with_index(1) do |bill, index| %>
+    <% @bills.to_enum.with_index(1).each do |bill, index | %>
       <tr>
         <td> <div align="right"> <%= index %> </td>
         <td> <%= bill.store.upcase %></td>
