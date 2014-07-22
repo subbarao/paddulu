@@ -1,5 +1,4 @@
 <h1>Listing bills</h1>
-<% a = current_user.bills.count + 1 %>
 
 <table class="table table-bordered table-striped table-condensed " >
   <thead>
@@ -13,9 +12,9 @@
   </thead>
 
   <tbody>
-    <% @bills.each do |bill| %>
+    <% @bills.each_with_index(1) do |bill, index| %>
       <tr>
-        <td> <div align="right"> <%= a -= 1 %> </td>
+        <td> <div align="right"> <%= index %> </td>
         <td> <%= bill.store.upcase %></td>
         <td> <div align="center"> <%= bill.bought_on.strftime("%d-%b-%Y") %></td>
         <td> <div align="right"> <%= number_to_currency(bill.total) %></td>
