@@ -1,23 +1,20 @@
 <h1>Listing bills <%= link_to 'New Bill', new_bill_path, class: "btn btn-success active btn-small" %> </h1>
 <% a = current_user.bills.count + 1 %>
 
-<table class="table table-bordered table-striped table-condensed ">
+<table class="table table-bordered table-striped table-condensed table-responsive">
   <thead>
-  <tr class="table info">
+  <tr  bgcolor="#a9a9a9">
     <th>
-      <div align="center"> Sl.
+      <div align="center"> Sl.</div>
     </th>
     <th>
-      <div align="center"> Store
+      <div align="center"> Store </div>
     </th>
     <th>
-      <div align="center"> Bought on
+      <div align="center"> Bought on </div>
     </th>
     <th>
-      <div align="center"> Amount
-    </th>
-    <th colspan="3">
-      <div align="center"> Action
+      <div align="center"> Amount </div>
     </th>
   </tr>
   </thead>
@@ -26,24 +23,20 @@
   <% @bills.each do |bill| %>
       <tr>
         <td>
-          <div align="right"> <%= a -= 1 %>
+          <div align="right"> <%= link_to a -= 1, bill %> </div>
         </td>
-        <td> <%= bill.store.upcase %></td>
+        <td> <%= link_to bill.store.upcase, bill %>
+        </td>
         <td>
-          <div align="center"> <%= bill.bought_on.strftime("%d-%b-%Y") %></td>
+          <div align="center"> <%= link_to bill.bought_on.strftime("%d-%b-%Y"), bill %> </div>
+        </td>
         <td>
-          <div align="right"> <%= number_to_currency(bill.total) %></td>
-        <td>
-          <div align="center"> <%= link_to 'Show', bill, class: "btn btn-info active btn-xs" %></td>
-        <td>
-          <div align="center"> <%= link_to 'Edit', edit_bill_path(bill), class: "btn btn-warning active btn-xs" %></td>
-        <td>
-          <div align="center"> <%= link_to 'Destroy', bill, method: :delete, data: {confirm: 'Are you sure you want to destroy the Bill?'}, class: "btn btn-danger active btn-xs" %>
+          <div align="right"> <%= link_to number_to_currency(bill.total), bill %> </div>
         </td>
       </tr>
   <% end %>
   <td class="table info" colspan="4">
-    <div align="right"> Total is <strong> <%= number_to_currency(@amount) %>
+    <div align="right"> Total is <strong> <%= number_to_currency(@amount) %> </strong> </div>
   </td>
   </tbody>
 
