@@ -13,4 +13,11 @@ class Bill < ActiveRecord::Base
 		  errors.add(:bought_on, "date can't be in future") if bought_on > Date.today
 	  end
 
+  before_save :upcase_store
+
+  private
+  def upcase_store
+	    store.upcase!
+  end
+
 end
