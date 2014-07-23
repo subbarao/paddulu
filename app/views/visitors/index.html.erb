@@ -1,2 +1,8 @@
-<h4>Welcome to Paddulu <%= current_user.email  %> </h4>
+<% if user_signed_in? %>
+<h4>Welcome <strong> <%= current_user.email  %> </strong> to Paddulu </h4>
 <p>Tracking expenses.</p>
+<% else %>
+    <h4>Welcome to Paddulu </h4>
+    <p>Tracking expenses.</p>
+<% end %>
+
