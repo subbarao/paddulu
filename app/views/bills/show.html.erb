@@ -1,20 +1,16 @@
 
+<pre>
+<font face="Century Gothic" size=3>
+           Store: <strong> <%= @bill.store.upcase %> </strong>
 
-<p>
-  <strong>Store:</strong>
-  <%= @bill.store %>
-</p>
+  Bought on: <strong> <%= @bill.bought_on.strftime("%d-%b-%Y") %> </strong>
 
-<p>
-  <strong>Bought on:</strong>
-  <%= @bill.bought_on.strftime("%d-%b-%Y") %>
-</p>
+            Total: <strong> <%= number_to_currency(@bill.total) %> </strong>
+</font>
+</pre>
 
-<p>
-  <strong>Total:</strong>
-  <%= number_to_currency(@bill.total) %>
-</p>
 
 <%= link_to 'Edit', edit_bill_path(@bill),  class: "btn btn-warning btn-xs active" %>
 <%= link_to 'Destroy', bill_path(@bill) , method: :delete, data: {confirm: 'Are you sure you want to destroy the Bill?'}, class: "btn btn-danger active btn-xs" %>
 <%= link_to 'Back', bills_path, class: "btn btn-primary btn-xs active"  %>
+
