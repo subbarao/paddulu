@@ -3,7 +3,9 @@ class Bill < ActiveRecord::Base
 
   validates :store, presence: true
 
-  validates :total, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/, message: "should be in dollars and cents and seperated by dot"}, :numericality => {:greater_than => 0}
+  validates :total, presence: true, :numericality => {:greater_than => 0}
+
+  validates_format_of :total, :with => /\A\d+(?:\.\d{0,2})?\z/, message: "should be in dollars and cents and seperated by dot  999.99"
 
   validate :bought_on_date_cannot_be_in_future
 

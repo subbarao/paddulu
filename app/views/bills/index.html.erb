@@ -1,4 +1,4 @@
-<h1>Listing bills</h1>
+<h1>Listing bills <%= link_to 'New Bill', new_bill_path, class: "btn btn-success active btn-small" %> </h1>
 <% a = current_user.bills.count + 1 %>
 
 <table class="table table-bordered table-striped table-condensed " >
@@ -31,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Bill', new_bill_path, class: "btn btn-success active btn-xs" %>
+
