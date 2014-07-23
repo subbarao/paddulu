@@ -1,7 +1,7 @@
 
 <pre>
 <font face="Century Gothic" size=3>
-           Store: <strong> <%= @bill.store %> </strong>
+           Store: <strong> <%= @bill.store.upcase %> </strong>
 
   Bought on: <strong> <%= @bill.bought_on.strftime("%d-%b-%Y") %> </strong>
 
